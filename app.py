@@ -202,6 +202,8 @@ header[data-testid="stHeader"],[data-testid="stToolbar"],[data-testid="stDecorat
 .block-container,[data-testid="stMainBlockContainer"]{max-width:1100px;padding-top:0 !important;padding-bottom:0 !important;}
 .stApp, .stApp p, .stApp li, .stApp span, .stApp a, .stApp div{font-family:'DM Sans',sans-serif;}
 .stMarkdown p{margin:0;}
+.hero h1,.sec h2,.proj h3,.contact h2,.topbar .brand{font-family:'Fraunces',Georgia,serif !important;}
+.hero h1,.sec h2,.proj h3,.cert h3,.contact h2{padding:0 !important;}
 
 
 .topbar{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--ink);}
