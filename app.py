@@ -312,5 +312,3 @@ with st.container():
                 else:
                     st.warning("Please fill in all fields.")
 
-st.divider()
-st.caption(f"© 2026 {PROFILE['name']} · Built with Streamlit")
