@@ -117,6 +117,7 @@ CERTIFICATES = [
         "name": "AI for You: Training and Assessment",
         "org": "Oracle University",
         "date": "Aug 2026",
+        "image": "images/oracle_certificate.jpg",
         "points": [
             "Learning path covering foundational AI concepts and technologies.",
             "Insights into machine learning principles, AI applications, and cloud-based AI.",
@@ -275,8 +276,16 @@ with st.container():
     section("📜 Courses & Certificates")
     for c in CERTIFICATES:
         with st.expander(f"{c['name']} — {c['org']} ({c['date']})", expanded=True):
-            for p in c["points"]:
-                st.markdown(f"- {p}")
+            img = BASE / c["image"] if c.get("image") else None
+            if img and img.exists():
+                txt_col, img_col = st.columns([1.3, 1], gap="large")
+                with txt_col:
+                    for p in c["points"]:
+                        st.markdown(f"- {p}")
+                img_col.image(str(img), caption=c["name"], use_container_width=True)
+            else:
+                for p in c["points"]:
+                    st.markdown(f"- {p}")
 
 st.divider()
 
