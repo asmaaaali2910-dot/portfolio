@@ -50,6 +50,19 @@ PROFILE = {
 
 PROJECTS = [
     {
+        "name": "AI Sentiment Analyzer",
+        "url": f"{GITHUB_URL}/sentiment-app",
+        "demo": "https://asmaa-sentiment-app.streamlit.app",
+        "image": "images/sentiment.png",
+        "description": (
+            "Web app that classifies English reviews as positive or negative in real time, "
+            "using the pre-trained DistilBERT model (67M parameters) from Hugging Face. "
+            "I selected, integrated, tested, and deployed the model, with single and batch "
+            "modes, confidence scores, a summary chart, and CSV export."
+        ),
+        "tools": ["Python", "Hugging Face", "Transformers", "PyTorch", "Streamlit", "Pandas"],
+    },
+    {
         "name": "Snake Game",
         "url": f"{GITHUB_URL}/snake-game",
         "image": "images/snake.png",
@@ -256,6 +269,8 @@ header[data-testid="stHeader"],[data-testid="stToolbar"],[data-testid="stDecorat
 .proj h3{font-family:'Fraunces',serif;color:var(--ink);font-size:24px;line-height:1.25;margin:0;}
 .proj p{color:var(--muted);line-height:1.7;font-size:15.5px;}
 .link{margin-top:auto;padding-top:8px;color:var(--rose) !important;font-weight:700;text-decoration:none !important;}
+.links{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:22px;}
+.links .link{margin-top:0;padding-top:0;}
 .link:hover{text-decoration:underline !important;}
 
 
@@ -350,7 +365,8 @@ for i, p in enumerate(PROJECTS, start=1):
     <h3>{esc(p["name"])}</h3>
     <p>{esc(p["description"])}</p>
     <div>{tags(p["tools"])}</div>
-    <a class="link" href="{p["url"]}" target="_blank">View code on GitHub &rarr;</a>
+    <div class="links">{f'<a class="link" href="{p["demo"]}" target="_blank">Try the live app &rarr;</a>' if p.get("demo") else ""}
+    <a class="link" href="{p["url"]}" target="_blank">View code on GitHub &rarr;</a></div>
   </div>
 </div>
 """
